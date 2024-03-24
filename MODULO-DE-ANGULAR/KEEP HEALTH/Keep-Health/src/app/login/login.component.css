@@ -55,13 +55,13 @@
     background-color: red;
   }
 
-  #div--login #login--botão-cadatro:hover {
+  #div--login #login--botão-cadastro:hover {
     transition: 0.8;
     background-color: green;
     scale: 1.3;
   }
 
-  #div--login #login--botão-cadatro:active {
+  #div--login #login--botão-cadastro:active {
     scale: 0.9;
   }
   
