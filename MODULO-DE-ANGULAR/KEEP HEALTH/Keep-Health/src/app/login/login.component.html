@@ -1,0 +1,13 @@
+<div id="div--login">
+    <p> 🥗 KEEP HEALTH - Login</p>
+    <form [formGroup]="loginForm" (ngSubmit)="onLogin()" id="form">
+      <input placeholder="Digite seu login" type="email" formControlName="email" id="login--email">
+      <input placeholder="Digite sua senha" type="password" formControlName="senha" id="login--senha">
+      <button id="login--botão-entrar" type="submit">Entrar</button>
+    </form>
+    <button id="login--botão-esqueci-senha">Esqueci a senha</button>
+    <button id="login--botão-cadastro" routerLink="/cadastro">Cadastrar-me</button>
+  </div>
+  
+
+

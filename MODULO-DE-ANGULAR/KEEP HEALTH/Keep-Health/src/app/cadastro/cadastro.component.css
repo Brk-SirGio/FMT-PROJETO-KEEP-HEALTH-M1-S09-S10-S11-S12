@@ -1,0 +1,59 @@
+#div--cadastrar {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    margin: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 10px 25px 0 rgba(0,0,0,0.2);
+    padding: 20px;
+    background-color: white;
+    align-items: center;
+    border-radius: 10px;
+  }
+  
+  #form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  #cadastro--email,
+  #cadastro--nome,
+  #cadastro--nascimento,
+  #cadastro--senha,
+  #cadastro--confirma-senha {
+    width: 70%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  #div--cadastrar button {
+    width: 30%;
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+    background-color: #5c6bc0;
+    color: white;
+    cursor: pointer;
+  }
+
+  #div--cadastrar button:active {
+    scale: 0.8;
+  }
+  
+  #div--cadastrar form #botão--cadastrar:hover {
+    transition: 0.3;
+    background-color: green;
+  }
+
+#div--cadastrar #botão--voltar:hover {
+    transition: 0.3;
+    background-color: red;
+}

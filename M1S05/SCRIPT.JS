@@ -7,6 +7,10 @@ let input = document.querySelector("#novaTarefa");
 let button = document.querySelector("#addTarefa");
 let ul = document.querySelector(".lista");
 
+
+const contadorElemento = document.getElementById('contador');
+
+
 // Seleciona todos os itens da lista
 let itens = document.querySelectorAll(".itemList");
 
@@ -14,7 +18,7 @@ let itens = document.querySelectorAll(".itemList");
 for (let item of itens) {
   // Seleciona o checkbox e o botão do item
   let checkbox = item.querySelector(".checkbox");
-  let button = item.querySelector(".remover-item-lista");
+
   // Adiciona um evento de change no checkbox para mudar o estilo do item
   checkbox.addEventListener("change", function() {
     // Verifica se o checkbox está marcado ou não
@@ -29,9 +33,11 @@ for (let item of itens) {
       item.className = "itemList";
     }
   });
+  let button = item.querySelector(".remover-item-lista");
   // Adiciona um evento de clique no botão para remover o item
   button.addEventListener("click", function() {
     // Remove o item da UL
+    window.confirm("Tem certeza que deseja excluir?")
     ul.removeChild(item);
   });
 }
@@ -67,6 +73,8 @@ function adicionarItem() {
     li.appendChild(button);
     // Insere o li na UL
     ul.appendChild(li);
+    // Atualiza o contador
+    atualizarContador();
     // Limpa o valor do input
     input.value = "";
     // Adiciona um evento de change no checkbox para mudar o estilo do li
@@ -86,10 +94,22 @@ function adicionarItem() {
     // Adiciona um evento de clique no button para remover o li
     button.addEventListener("click", function() {
       // Remove o li da UL
+      window.confirm("Tem certeza que deseja excluir?")
       ul.removeChild(li);
+      atualizarContador();
     });
   }
 }
 
 // Adiciona um evento de clique no botão para chamar a função
 button.addEventListener("click", adicionarItem);
+
+
+
+//contador
+
+
+function atualizarContador() {
+  let numeroItens = ul.children.length;
+  contadorElemento.textContent = numeroItens;
+}

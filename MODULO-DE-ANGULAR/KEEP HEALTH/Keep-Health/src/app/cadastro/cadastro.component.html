@@ -1,0 +1,15 @@
+<div id="div--cadastrar">
+    <p> 🥗 KEEP HEALTH - Novo Cadastro</p>
+<form (ngSubmit)="cadastrarUsuario()" id="form">
+    <input [(ngModel)]="nome" name="nomeCompleto" placeholder="Digite seu nome completo" type="text" id="cadastro--nome">
+    <input [(ngModel)]="email" name="emailUsuario" required placeholder="Digite um e-mail" type="email" id="cadastro--email">
+    <input [(ngModel)]="nascimento" name="dataNascimento" type="date" id="cadastro--nascimento">
+    <input [(ngModel)]="senha" name="senhaUsuario" required minlength="8" placeholder="Digite uma senha" type="password" id="cadastro--senha">
+    <input [(ngModel)]="confirmarSenha" name="confirmarSenhaUsuario" required minlength="8" placeholder="Confirme a senha digitada" type="password" id="cadastro--confirma-senha">
+    <button id="botão--cadastrar" type="submit">Cadastrar</button> 
+</form>
+<button id="botão--voltar" type="submit" routerLink="/login">Voltar</button>
+</div>
+
+
+
