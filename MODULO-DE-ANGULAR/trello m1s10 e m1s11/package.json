@@ -1,5 +1,5 @@
 {
-  "name": "keep-health",
+  "name": "m1-s09",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
@@ -7,12 +7,12 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "serve:ssr:Keep-Health": "node dist/keep-health/server/server.mjs"
+    "serve:ssr:M1S09": "node dist/m1-s09/server/server.mjs"
   },
   "private": true,
   "dependencies": {
     "@angular/animations": "^17.2.0",
-    "@angular/common": "^17.2.0",
+    "@angular/common": "^17.3.2",
     "@angular/compiler": "^17.2.0",
     "@angular/core": "^17.2.0",
     "@angular/forms": "^17.2.0",
@@ -21,8 +21,8 @@
     "@angular/platform-server": "^17.2.0",
     "@angular/router": "^17.2.0",
     "@angular/ssr": "^17.2.3",
-    "date-fns": "^3.6.0",
     "express": "^4.18.2",
+    "ngx-store": "^3.1.1",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.14.3"

@@ -1,0 +1,21 @@
+<app-sidebar></app-sidebar>
+
+<div id="dadosUsuario">
+    <p>Nome: {{ usuarioObject.nome }}</p>
+    <p>Email: {{ usuarioObject.email }}</p>
+    <p>Código Usuário: {{ usuarioObject.codigoUsuario }} </p>
+    <p>Idade: {{ usuarioObject.nascimento |age }} anos</p>
+    <p>Peso: {{ usuarioObject.peso }} KG</p>
+    <p>Altura: {{ usuarioObject.altura | converteMedida }}</p>
+
+    <div id="buscaEndereco">
+    <label for="cep">Insira seu CEP:</label>
+    <input id="cep" type="number">
+    <button type="button">Pesquisar</button>
+    
+    <p>Sua Localização: </p>
+    </div>
+
+</div>
+
+<!-- nome, email, peso, altura, código do usuário, idade e localização -->

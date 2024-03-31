@@ -1,0 +1,24 @@
+<div class="login">
+  <form (ngSubmit)="entrar()" #loginForm="ngForm">
+    <div class="elemento-formulario">
+      <label for="codigoUsuario">Código do Usuário</label>
+      <input
+        type="text"
+        name="codigoUsuario"
+        [(ngModel)]="login.codigoUsuario"
+        #codigoUsuario="ngModel">
+    </div>
+    <div class="elemento-formulario">
+      <label for="senhaUsuario">Senha</label>
+      <input
+        type="password"
+        name="senhaUsuario"
+        [(ngModel)]="login.senha"
+        #senha="ngModel">
+    </div>
+    <div class="botoes-formulario">
+      <button>Cadastrar</button>
+      <button class="entrar" type="submit">Entrar</button>
+    </div>
+  </form>
+</div>
