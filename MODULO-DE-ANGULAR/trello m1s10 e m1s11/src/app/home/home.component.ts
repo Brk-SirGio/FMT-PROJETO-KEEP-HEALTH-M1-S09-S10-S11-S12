@@ -24,7 +24,7 @@ export class HomeComponent {
     },
     {
       imagem: 'assets/maca.jpg',
-      descricao: 'Maça'
+      descricao: 'Maçã'
     },
     {
       imagem: 'assets/mamao.jpg',
@@ -32,7 +32,7 @@ export class HomeComponent {
     },
     {
       imagem: 'assets/pera.jpg',
-      descricao: 'Pera'
+      descricao: 'Pêra'
     },
     {
       imagem: 'assets/uva.jpg',

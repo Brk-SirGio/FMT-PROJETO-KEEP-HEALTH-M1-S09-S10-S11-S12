@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { SidebarComponent } from '../sidebar/sidebar.component';
 import { Router, RouterLink, RouterModule } from '@angular/router';
-
 @Component({
   selector: 'app-home',
   standalone: true,
@@ -10,6 +9,7 @@ import { Router, RouterLink, RouterModule } from '@angular/router';
   styleUrl: './home.component.css'
 })
 export class HomeComponent {
+  usuarioObject: any;
   
   constructor(private router: Router){
     
@@ -22,6 +22,13 @@ export class HomeComponent {
     imageLink: ""
   }
 
-  localStorage.setItem('abacate', JSON.stringify(abacate));}
-  
-  }
+  localStorage.setItem('abacate', JSON.stringify(abacate));
+
+  const usuarioString = localStorage.getItem('usuario');
+
+    if (usuarioString) {
+      this.usuarioObject = JSON.parse(usuarioString);
+    }
+
+}
+}

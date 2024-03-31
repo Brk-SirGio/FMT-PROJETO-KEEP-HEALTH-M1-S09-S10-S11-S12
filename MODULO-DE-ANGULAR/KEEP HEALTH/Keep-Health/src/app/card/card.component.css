@@ -1,0 +1,27 @@
+.card {
+  border: 1px solid darkblue;
+  border-radius: 6px;
+  padding: 16px 8px;
+  width: fit-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  box-shadow: 7px 10px 18px -7px rgba(0,0,0,0.75);
+  -webkit-box-shadow: 7px 10px 18px -7px rgba(0,0,0,0.75);
+  -moz-box-shadow: 7px 10px 18px -7px rgba(0,0,0,0.75);
+  margin: 5px;
+}
+
+.card:hover {
+  scale: 1.1;
+  cursor: pointer;
+}
+
+img {
+  width: 115px;
+}
+
+span {
+  margin-top: 16px;
+}
