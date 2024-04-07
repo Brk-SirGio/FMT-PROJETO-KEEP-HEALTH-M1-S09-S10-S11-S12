@@ -9,12 +9,19 @@
     <p>Altura: {{ usuarioObject.altura | converteMedida }}</p>
 
     <div id="buscaEndereco">
-    <label for="cep">Insira seu CEP:</label>
-    <input id="cep" type="number">
-    <button type="button">Pesquisar</button>
-    
-    <p>Sua Localização: </p>
-    </div>
+        <label for="cep">Insira seu CEP:</label>
+        <input type="number" id="cep" [(ngModel)]="cepInput">
+        <button type="button" (click)="pesquisar()">Pesquisar</button>
+      
+        <p>Sua Localização:</p>
+      
+        <div class="address-response" *ngIf="response">
+          {{ response?.logradouro }}, {{ response?.complemento }} - {{ response?.bairro }}
+          {{ response?.localidade }}/{{ response?.uf }}
+        </div>
+      
+      </div>
+      
 
 </div>
 
