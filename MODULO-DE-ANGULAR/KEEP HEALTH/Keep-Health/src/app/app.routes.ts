@@ -8,6 +8,11 @@ import { PerfilComponent } from './perfil/perfil.component';
 
 export const routes: Routes = [
     {
+      path: '',
+      redirectTo: 'login',
+      pathMatch: 'full'
+    },
+    {
       path: 'home',
       title: 'Home da página',
       component: HomeComponent,
