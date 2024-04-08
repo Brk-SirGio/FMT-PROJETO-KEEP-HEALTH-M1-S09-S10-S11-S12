@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Address } from '../address/models/address.model';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -7,9 +8,12 @@ import { Observable } from 'rxjs';
 })
 export class AddressService {
 
+  private readonly baseUrl = 'https://viacep.com.br/ws/';
+
   constructor(private http: HttpClient) { }
 
-  get(cep: string): Observable<any> {
-    return this.http.get(`https://viacep.com.br/ws/${cep}/json/`);
+  getAddress(cep: string): Observable<Address> {
+    return this.http.get<Address>(`${this.baseUrl}${cep}/json/`);
   }
+
 }

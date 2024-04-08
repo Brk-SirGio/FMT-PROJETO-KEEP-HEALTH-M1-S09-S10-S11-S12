@@ -7,22 +7,16 @@
     <p>Idade: {{ usuarioObject.nascimento |age }} anos</p>
     <p>Peso: {{ usuarioObject.peso }} KG</p>
     <p>Altura: {{ usuarioObject.altura | converteMedida }}</p>
+    <p>Seu endereço:</p>
+    <input type="text" [(ngModel)]="cep" placeholder="Insisa seu Cep">
+<button (click)="pesquisar()">Pesquisar</button>
 
-    <div id="buscaEndereco">
-        <label for="cep">Insira seu CEP:</label>
-        <input type="number" id="cep" [(ngModel)]="cepInput">
-        <button type="button" (click)="pesquisar()">Pesquisar</button>
-      
-        <p>Sua Localização:</p>
-      
-        <div class="address-response" *ngIf="response">
-          {{ response?.logradouro }}, {{ response?.complemento }} - {{ response?.bairro }}
-          {{ response?.localidade }}/{{ response?.uf }}
-        </div>
-      
-      </div>
-      
+<div *ngIf="address">
+  {{ address.logradouro }}, {{ address.complemento }} - {{ address.bairro }}
+  {{ address.localidade }}/{{ address.uf }}
+</div>
 
+            
 </div>
 
 <!-- nome, email, peso, altura, código do usuário, idade e localização -->

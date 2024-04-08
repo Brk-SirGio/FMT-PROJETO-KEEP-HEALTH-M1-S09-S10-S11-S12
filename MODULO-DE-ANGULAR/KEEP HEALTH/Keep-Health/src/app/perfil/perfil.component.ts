@@ -1,28 +1,35 @@
-import { Component, ViewChild, ElementRef, Injectable } from '@angular/core';
+import { Component, ViewChild, ElementRef, Injectable, OnInit, Injector } from '@angular/core';
 import { SidebarComponent } from '../sidebar/sidebar.component';
 import { PipesModule } from '../pipes/pipes.module';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { AddressService } from '../services/adress.service';
-import { HttpClient } from '@angular/common/http';
-
+import { AddressModule } from '../address/address.module';
+import { AddressService } from '../services/address.service';
+import { Address } from '../address/models/address.model';
+import { HttpClientModule } from '@angular/common/http';
+import { addressServiceFactory } from '../services/address.service.factory'; // Importe a fábrica
 
 @Component({
   selector: 'app-perfil',
   standalone: true,
-  imports: [SidebarComponent, PipesModule, CommonModule, FormsModule],
+  imports: [SidebarComponent, PipesModule, CommonModule, FormsModule, AddressModule, HttpClientModule],
   templateUrl: './perfil.component.html',
-  styleUrls: ['./perfil.component.css']
+  styleUrls: ['./perfil.component.css'],
+  providers: [
+    {
+      provide: AddressService,
+      useFactory: addressServiceFactory,
+      deps: [Injector]
+    }
+  ]
 })
-
-export class PerfilComponent {
+export class PerfilComponent implements OnInit {
 
   usuarioObject: any;
-  cepInput: string;
-  response: any;
+  cep: string | undefined;
+  address: Address = {} as Address;
 
-  constructor(private addressService: AddressService) {
-    this.cepInput = '';
+  constructor(private injector: Injector, private addressService: AddressService) { // Injete o Injector
     const usuarioString = localStorage.getItem('usuario');
 
     if (usuarioString) {
@@ -30,9 +37,13 @@ export class PerfilComponent {
     }
   }
 
+  ngOnInit(): void {
+    // ...
+  }
+
   pesquisar() {
-    this.addressService.get(this.cepInput).subscribe((data) => {
-      this.response = data;
+    this.addressService.getAddress(this.cep as string).subscribe(address => {
+      this.address = address;
     });
   }
 
