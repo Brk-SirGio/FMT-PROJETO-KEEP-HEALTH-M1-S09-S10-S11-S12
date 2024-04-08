@@ -1,20 +1,20 @@
-import { Component } from '@angular/core';
-import { CardComponent } from '../card/card.component';
-import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
-import { SidebarComponent } from '../shared/components/sidebar/sidebar.component';
-import { HeaderComponent } from '../shared/components/header/header.component';
-import { Router } from '@angular/router';
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
+interface Produto {
+  id: number;
+  imagem: string;
+  descricao: string;
+  calorias: number;
+  vezesPorDia: number;
+  nome: string;
+}
 
-@Component({
-  selector: 'app-diet',
-  standalone: true,
-  imports: [HeaderComponent, CardComponent, CommonModule, FormsModule, SidebarComponent],
-  templateUrl: './dietas.component.html',
-  styleUrl: './dietas.component.css'
+@Injectable({
+  providedIn: 'root'
 })
-export class DietasComponent {
+export class DietasService {
+
   listaProdutos = [
     {
       id: 1,
@@ -97,22 +97,10 @@ export class DietasComponent {
       nome: 'Abacaxi'
     }
   ];
-  textoPesquisa: string | undefined;
-  listaProdutosFiltro = this.listaProdutos;
-  localStorageService: any;
-  localStorage: any;
 
-  constructor(private router: Router) {}
+  constructor(private http: HttpClient) {}
 
-  navegarDetalhe(id: number) {
-    this.router.navigate(['/diet-detail', id]);
-  }
-
-  pesquisar() {
-    if(!this.textoPesquisa) {
-      this.listaProdutosFiltro = this.listaProdutos;
-    } else {
-      this.listaProdutosFiltro = this.listaProdutos.filter(item => item.descricao === this.textoPesquisa);
-    }
+  getFruta(id: number): Produto | undefined {
+    return this.listaProdutos.find(fruta => fruta.id === id);
   }
 }

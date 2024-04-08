@@ -7,40 +7,39 @@ import { DetalhamentoDietasComponent } from './dietas/detalhamento-dietas/detalh
 import { PerfilComponent } from './perfil/perfil.component';
 
 export const routes: Routes = [
-    {
-      path: '',
-      redirectTo: 'login',
-      pathMatch: 'full'
-    },
-    {
-      path: 'home',
-      title: 'Home da página',
-      component: HomeComponent,
-    },
-    {
-        path: 'login',
-        title: 'Login da página',
-        component: LoginComponent,
-      },
-      {
-        path: 'cadastro',
-        title: 'Cadastro da página',
-        component: CadastroComponent,
-      },
-      {
-        path: 'diet',
-        title: 'Dietas',
-        component: DietasComponent,
-      },
-      {
-        path: 'diet-detail',
-        title: 'Detalhamento da dieta',
-        component: DetalhamentoDietasComponent,
-      },
-      {
-        path: 'profile',
-        title: 'perfil',
-        component: PerfilComponent,
-      }
-
+  {
+    path: '',
+    redirectTo: 'login',
+    pathMatch: 'full'
+  },
+  {
+    path: 'home',
+    title: 'Home da página',
+    component: HomeComponent,
+  },
+  {
+    path: 'login',
+    title: 'Login da página',
+    component: LoginComponent,
+  },
+  {
+    path: 'cadastro',
+    title: 'Cadastro da página',
+    component: CadastroComponent,
+  },
+  {
+    path: 'diet',
+    title: 'Dietas',
+    component: DietasComponent
+  },
+  {
+    path: 'diet-detail/:id', // Rota com parâmetro ':id'
+    title: 'Detalhamento da Dieta',
+    component: DetalhamentoDietasComponent
+  },
+  {
+    path: 'profile',
+    title: 'perfil',
+    component: PerfilComponent,
+  }
 ];

@@ -1,13 +1,13 @@
-import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-card',
   standalone: true,
-  imports: [CommonModule],
+  imports: [RouterModule],
   templateUrl: './card.component.html',
-  styleUrl: './card.component.css'
+  styleUrls: ['./card.component.css']
 })
 export class CardComponent {
-  @Input() item: { imagem: string; descricao: string; } | undefined;
+  @Input() item: { imagem: string; nome: string; id: number; } | undefined;
 }

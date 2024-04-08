@@ -1,4 +1,4 @@
-<div class="card">
+<div class="card" [routerLink]="['/diet-detail', item?.id]">
   <img [src]="item?.imagem" alt="">
-  <span>Descrição: {{ item?.descricao }}</span>
+  <span>{{ item?.nome }}</span>
 </div>
