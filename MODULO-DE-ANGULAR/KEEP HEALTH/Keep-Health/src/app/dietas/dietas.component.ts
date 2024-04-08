@@ -2,13 +2,14 @@ import { Component } from '@angular/core';
 import { CardComponent } from '../card/card.component';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { SidebarComponent } from '../sidebar/sidebar.component';
+import { SidebarComponent } from '../shared/components/sidebar/sidebar.component';
+import { HeaderComponent } from '../shared/components/header/header.component';
 
 
 @Component({
   selector: 'app-diet',
   standalone: true,
-  imports: [CardComponent, CommonModule, FormsModule, SidebarComponent],
+  imports: [HeaderComponent, CardComponent, CommonModule, FormsModule, SidebarComponent],
   templateUrl: './dietas.component.html',
   styleUrl: './dietas.component.css'
 })

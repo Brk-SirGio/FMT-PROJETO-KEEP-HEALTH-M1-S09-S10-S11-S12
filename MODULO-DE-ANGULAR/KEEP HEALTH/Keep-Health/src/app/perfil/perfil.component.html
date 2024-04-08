@@ -1,3 +1,4 @@
+<app-header></app-header>
 <app-sidebar></app-sidebar>
 
 <div id="dadosUsuario">
@@ -8,12 +9,14 @@
     <p>Peso: {{ usuarioObject.peso }} KG</p>
     <p>Altura: {{ usuarioObject.altura | converteMedida }}</p>
     <p>Seu endereço:</p>
-    <input type="text" [(ngModel)]="cep" placeholder="Insisa seu Cep">
-<button (click)="pesquisar()">Pesquisar</button>
+    <input id="pesquisaCepInput" type="text" [(ngModel)]="cep" placeholder="Insisa seu Cep">
+<button id="pesquisaCepButton" (click)="pesquisar()">Pesquisar</button>
 
-<div *ngIf="address">
-  {{ address.logradouro }}, {{ address.complemento }} - {{ address.bairro }}
-  {{ address.localidade }}/{{ address.uf }}
+<div *ngIf="address" id="endereçoCompleto">
+  <p> Endereço: {{ address.logradouro }}</p>
+  <p> Complemento: {{ address.complemento }}</p> 
+  <p> Bairro: {{ address.bairro }}</p>
+  <p> Estado/UF: {{ address.localidade }}/{{ address.uf }} </p> 
 </div>
 
             

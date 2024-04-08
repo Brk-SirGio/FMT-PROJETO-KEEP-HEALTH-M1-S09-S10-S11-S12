@@ -1,5 +1,5 @@
 import { Component, ViewChild, ElementRef, Injectable, OnInit, Injector } from '@angular/core';
-import { SidebarComponent } from '../sidebar/sidebar.component';
+import { SidebarComponent } from '../shared/components/sidebar/sidebar.component';
 import { PipesModule } from '../pipes/pipes.module';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
@@ -8,11 +8,12 @@ import { AddressService } from '../services/address.service';
 import { Address } from '../address/models/address.model';
 import { HttpClientModule } from '@angular/common/http';
 import { addressServiceFactory } from '../services/address.service.factory'; // Importe a fábrica
+import { HeaderComponent } from '../shared/components/header/header.component';
 
 @Component({
   selector: 'app-perfil',
   standalone: true,
-  imports: [SidebarComponent, PipesModule, CommonModule, FormsModule, AddressModule, HttpClientModule],
+  imports: [HeaderComponent, SidebarComponent, PipesModule, CommonModule, FormsModule, AddressModule, HttpClientModule],
   templateUrl: './perfil.component.html',
   styleUrls: ['./perfil.component.css'],
   providers: [

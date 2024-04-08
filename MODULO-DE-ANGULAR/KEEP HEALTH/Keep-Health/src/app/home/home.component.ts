@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
-import { SidebarComponent } from '../sidebar/sidebar.component';
+import { SidebarComponent } from '../shared/components/sidebar/sidebar.component';
 import { Router, RouterLink, RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
+import { HeaderComponent } from '../shared/components/header/header.component';
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [SidebarComponent, HttpClientModule],
+  imports: [SidebarComponent, HttpClientModule, HeaderComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
