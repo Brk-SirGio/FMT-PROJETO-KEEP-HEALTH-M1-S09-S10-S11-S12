@@ -15,18 +15,30 @@
     flex-direction: column;
   }
   
+  .pesquisar {
+    display: flex;
+    align-items: center;  
+  }
+
   .pesquisar input {
     height: 42px;
     width: 250px;
     border-radius: 8px;
-    border: 1px solid black;
+    border: 1px solid #5c6bc0;
+    margin-right: 5px;
+    box-shadow: 7px 10px 18px -7px rgba(0,0,0,0.75);
   }
   
   .pesquisar button {
-    height: 42px;
-    border-radius: 8px;
-    font-weight: 600;
-    margin-left: 16px;
+    width: 35%;
+    padding: 15px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+    background-color: #5c6bc0;
+    color: white;
+    cursor: pointer;
+    box-shadow: 7px 10px 18px -7px rgba(0,0,0,0.75);
   }
   
   .lista-cards {
