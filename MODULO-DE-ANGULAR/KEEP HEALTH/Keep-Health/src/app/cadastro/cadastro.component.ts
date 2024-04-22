@@ -12,6 +12,8 @@ import { Router, RouterLink, RouterModule } from '@angular/router';
 export class CadastroComponent {
   nome: string | null = null;
   email: string | null = null;
+  peso: number | null = null;
+  altura: number | null = null;
   nascimento: Date | null = null;
   senha: string | null = null;
   confirmarSenha: string | null = null;
@@ -41,9 +43,12 @@ export class CadastroComponent {
 
     const usuario = {
       nome: this.nome,
+      peso: this.peso,
+      altura: this.altura,
       email: this.email,
       nascimento: this.nascimento,
       senha: this.senha,
+      codigoUsuario: 'teste123'
     };
 
     localStorage.setItem('usuario', JSON.stringify(usuario));

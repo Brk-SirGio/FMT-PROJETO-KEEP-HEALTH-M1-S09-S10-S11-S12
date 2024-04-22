@@ -25,7 +25,9 @@
   #cadastro--nome,
   #cadastro--nascimento,
   #cadastro--senha,
-  #cadastro--confirma-senha {
+  #cadastro--confirma-senha,
+  #cadastro--peso,
+  #cadastro--altura {
     width: 70%;
     padding: 10px;
     margin: 10px 0;
@@ -57,3 +59,4 @@
     transition: 0.3;
     background-color: red;
 }
+

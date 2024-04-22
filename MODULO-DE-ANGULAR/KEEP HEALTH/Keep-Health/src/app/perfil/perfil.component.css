@@ -1,0 +1,40 @@
+#dadosUsuario {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    margin: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 10px 25px 0 rgba(0,0,0,0.2);
+    padding: 20px;
+    background-color: white;
+    align-items: center;
+    border-radius: 10px;
+}
+
+#pesquisaCepButton {
+    width: 30%;
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+    background-color: #5c6bc0;
+    color: white;
+    cursor: pointer;
+}
+
+#pesquisaCepInput {
+    width: 70%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+#endereçoCompleto {
+    font-size: large;
+    text-transform: uppercase;
+    font-weight: 700; 
+}

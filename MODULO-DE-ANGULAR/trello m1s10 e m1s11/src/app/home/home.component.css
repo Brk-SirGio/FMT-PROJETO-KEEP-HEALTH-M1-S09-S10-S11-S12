@@ -1,0 +1,29 @@
+.home {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 16px;
+  flex-direction: column;
+}
+
+.pesquisar input {
+  height: 42px;
+  width: 250px;
+  border-radius: 8px;
+  border: 1px solid black;
+}
+
+.pesquisar button {
+  height: 42px;
+  border-radius: 8px;
+  font-weight: 600;
+  margin-left: 16px;
+}
+
+.lista-cards {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  margin-top: 16px;
+}

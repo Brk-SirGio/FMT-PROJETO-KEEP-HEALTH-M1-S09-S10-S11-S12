@@ -1,0 +1,39 @@
+<div class="cadastro">
+  <form (ngSubmit)="cadastrar()" [formGroup]="form"> <!-- Vinculo ao form group -->
+    <div class="elemento-formulario">
+      <label for="nome">Nome</label>
+      <input
+        type="text"
+        name="nome"
+        formControlName="nome"
+        >
+    </div>
+    <div class="elemento-formulario">
+      <label for="codigoUsuario">Código Usuário</label>
+      <input
+        type="text"
+        name="codigoUsuario"
+        formControlName="codigoUsuario"
+        >
+    </div>
+    <div class="elemento-formulario">
+      <label for="senha">Senha</label>
+      <input
+        type="password"
+        name="senha"
+        formControlName="senha"
+        >
+    </div>
+    <div class="elemento-formulario">
+      <label for="confirmarSenha">Confirmar Senha</label>
+      <input
+        type="password"
+        name="confirmarSenha"
+        formControlName="confirmarSenha"
+        >
+    </div>
+    <div class="botoes-formulario">
+      <button class="entrar" type="submit">Cadastrar</button>
+    </div>
+  </form>
+</div>

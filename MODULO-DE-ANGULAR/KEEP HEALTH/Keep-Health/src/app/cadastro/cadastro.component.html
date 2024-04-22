@@ -2,6 +2,8 @@
     <p> 🥗 KEEP HEALTH - Novo Cadastro</p>
 <form (ngSubmit)="cadastrarUsuario()" id="form">
     <input [(ngModel)]="nome" name="nomeCompleto" placeholder="Digite seu nome completo" type="text" id="cadastro--nome">
+    <input [(ngModel)]="peso" name="peso" placeholder="Digite seu peso em quilograma" type="number" id="cadastro--peso">
+    <input [(ngModel)]="altura" name="altura" placeholder="Digite sua altura em centímetros" type="number" id="cadastro--altura">
     <input [(ngModel)]="email" name="emailUsuario" required placeholder="Digite um e-mail" type="email" id="cadastro--email">
     <input [(ngModel)]="nascimento" name="dataNascimento" type="date" id="cadastro--nascimento">
     <input [(ngModel)]="senha" name="senhaUsuario" required minlength="8" placeholder="Digite uma senha" type="password" id="cadastro--senha">
@@ -12,4 +14,4 @@
 </div>
 
 
-
+<!-- nome, email, peso, altura, código do usuário, idade e localização -->

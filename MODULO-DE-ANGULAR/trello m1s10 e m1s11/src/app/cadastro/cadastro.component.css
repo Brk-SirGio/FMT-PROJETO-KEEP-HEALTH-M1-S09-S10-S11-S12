@@ -1,0 +1,48 @@
+.cadastro {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.cadastro form {
+  border: 1px solid;
+  border-radius: 6px;
+  margin: 10%;
+  padding: 22px 32px;
+  box-shadow: 7px 10px 18px -7px rgba(0,0,0,0.75);
+  -webkit-box-shadow: 7px 10px 18px -7px rgba(0,0,0,0.75);
+  -moz-box-shadow: 7px 10px 18px -7px rgba(0,0,0,0.75);
+}
+
+.cadastro form .elemento-formulario {
+  display: flex;
+  flex-direction: column;
+}
+
+.cadastro form .elemento-formulario + .elemento-formulario {
+  margin-top: 8px;
+}
+
+.cadastro form .botoes-formulario {
+  margin-top: 16px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.cadastro form .botoes-formulario button {
+  height: 24px;
+  width: 72px;
+  cursor: pointer;
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 4px;
+}
+
+.cadastro form .botoes-formulario button:hover {
+  scale: 1.1;
+}
+
+.cadastro form .botoes-formulario .entrar {
+  background-color: lightblue;
+}

@@ -1,0 +1,21 @@
+<app-header></app-header>
+<app-sidebar></app-sidebar>
+
+<div class="diets">
+
+  <div class="pesquisar">
+    <input type="text" [(ngModel)]="textoPesquisa">
+    <button (click)="pesquisar()">Pesquisar</button>
+  </div>
+
+  <div class="lista-cards">
+    <div *ngFor="let produto of listaProdutosFiltro">
+      <app-card [item]="produto"></app-card>
+    </div>
+  </div>
+  
+  
+
+</div>
+
+

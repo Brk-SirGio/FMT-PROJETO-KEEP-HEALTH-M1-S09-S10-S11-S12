@@ -1,0 +1,41 @@
+.diets {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    margin: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 10px 25px 0 rgba(0,0,0,0.2);
+    padding: 20px;
+    background-color: white;
+    align-items: center;
+    border-radius: 10px;
+    flex-direction: column;
+  }
+  
+  .pesquisar input {
+    height: 42px;
+    width: 250px;
+    border-radius: 8px;
+    border: 1px solid black;
+  }
+  
+  .pesquisar button {
+    height: 42px;
+    border-radius: 8px;
+    font-weight: 600;
+    margin-left: 16px;
+  }
+  
+  .lista-cards {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content:center;
+    align-items: center;
+    width: 100%;
+    margin-top: 16px;
+  }
+  
