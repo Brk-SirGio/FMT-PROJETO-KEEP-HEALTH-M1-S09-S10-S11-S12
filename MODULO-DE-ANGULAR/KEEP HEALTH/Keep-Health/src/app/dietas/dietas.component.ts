@@ -112,7 +112,7 @@ export class DietasComponent {
     if(!this.textoPesquisa) {
       this.listaProdutosFiltro = this.listaProdutos;
     } else {
-      this.listaProdutosFiltro = this.listaProdutos.filter(item => item.descricao === this.textoPesquisa);
+      this.listaProdutosFiltro = this.listaProdutos.filter(item => item?.nome === this.textoPesquisa);
     }
   }
 }

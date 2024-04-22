@@ -33,6 +33,7 @@ export const routes: Routes = [
     component: DietasComponent
   },
   {
+    
     path: 'diet-detail/:id', // Rota com parâmetro ':id'
     title: 'Detalhamento da Dieta',
     component: DetalhamentoDietasComponent

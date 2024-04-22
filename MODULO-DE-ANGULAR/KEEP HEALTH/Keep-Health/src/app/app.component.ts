@@ -4,7 +4,7 @@ import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
 import { CadastroComponent } from './cadastro/cadastro.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { DietasComponent } from './dietas/dietas.component';
 
 @Component({
@@ -20,6 +20,7 @@ import { DietasComponent } from './dietas/dietas.component';
     HttpClientModule,
     DietasComponent
     ],
+    providers: [ HttpClient ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
