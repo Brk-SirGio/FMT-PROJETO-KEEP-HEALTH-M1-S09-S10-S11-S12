@@ -8,7 +8,7 @@ import { HeaderComponent } from '../shared/components/header/header.component';
   standalone: true,
   imports: [SidebarComponent, HttpClientModule, HeaderComponent],
   templateUrl: './home.component.html',
-  styleUrl: './home.component.css'
+  styleUrl: './home.component.scss'
 })
 export class HomeComponent {
   usuarioObject: any;

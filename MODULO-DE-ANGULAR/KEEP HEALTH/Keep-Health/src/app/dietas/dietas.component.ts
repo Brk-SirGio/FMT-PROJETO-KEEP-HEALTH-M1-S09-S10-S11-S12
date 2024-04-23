@@ -12,7 +12,7 @@ import { Router } from '@angular/router';
   standalone: true,
   imports: [HeaderComponent, CardComponent, CommonModule, FormsModule, SidebarComponent],
   templateUrl: './dietas.component.html',
-  styleUrl: './dietas.component.css'
+  styleUrl: './dietas.component.scss'
 })
 export class DietasComponent {
   listaProdutos = [

@@ -15,7 +15,7 @@ import { HeaderComponent } from '../shared/components/header/header.component';
   standalone: true,
   imports: [HeaderComponent, SidebarComponent, PipesModule, CommonModule, FormsModule, AddressModule, HttpClientModule],
   templateUrl: './perfil.component.html',
-  styleUrls: ['./perfil.component.css'],
+  styleUrls: ['./perfil.component.scss'],
   providers: [
     {
       provide: AddressService,

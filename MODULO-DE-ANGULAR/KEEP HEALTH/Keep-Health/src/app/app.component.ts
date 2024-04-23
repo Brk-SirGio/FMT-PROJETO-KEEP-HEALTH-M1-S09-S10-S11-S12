@@ -22,7 +22,7 @@ import { DietasComponent } from './dietas/dietas.component';
     ],
     providers: [ HttpClient ],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrl: './app.component.scss'
 })
 export class AppComponent {
   title = 'Keep-Health';

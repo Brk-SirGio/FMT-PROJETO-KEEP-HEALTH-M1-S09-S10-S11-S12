@@ -22,7 +22,7 @@ interface Produto {
   standalone: true,
   imports: [HeaderComponent, CardComponent, CommonModule, FormsModule, SidebarComponent, RouterLink],
   templateUrl: './detalhamento-dietas.component.html',
-  styleUrls: ['./detalhamento-dietas.component.css'],
+  styleUrls: ['./detalhamento-dietas.component.scss'],
   template: `<button (click)="goBack()">Voltar</button>`
 })
 
