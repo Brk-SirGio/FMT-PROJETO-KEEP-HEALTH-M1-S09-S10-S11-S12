@@ -19,18 +19,18 @@ h1 {
     h1 {
       top: 50%;
       left: 60%;
-      width: 50%; // Ajuste para uma largura menor
-      // Outros estilos conforme necessário
+      width: 50%;
+      
     }
   }
   
-  // Breakpoint para dispositivos de 768px até 1024px
+  
   @media (min-width: 768px) {
     h1 {
       top: 50%;
     left: 60%;
-      width: 50%; // Ajuste para uma largura ainda menor
-      // Outros estilos conforme necessário
+      width: 50%;
+      
     }
   }
   
