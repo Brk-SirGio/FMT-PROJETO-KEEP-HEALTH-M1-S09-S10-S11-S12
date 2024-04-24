@@ -1,24 +1,24 @@
-// Estilos base (mobile first)
+
 #sidebar {
   background-color: #000080;
   margin: 0;
   padding: 0;
-  width: 100%; // Largura total para dispositivos móveis
+  width: 100%;
   position: fixed;
   overflow: auto;
-  display: flex; // Muda para flexbox
-  flex-direction: row; // Alinha os botões horizontalmente
-  justify-content: space-around; // Distribui os botões uniformemente
+  display: flex; 
+  flex-direction: row; 
+  justify-content: space-around;
 }
 
 .botao-sidebar {
   color: white;
-  font-size: 16px; // Tamanho de fonte para dispositivos móveis
-  padding: 8px 16px; // Padding reduzido para dispositivos móveis
+  font-size: 16px; 
+  padding: 8px 16px;
   text-decoration: none;
   background-color: transparent;
   border: none;
-  white-space: nowrap; // Evita que o texto quebre em várias linhas
+  white-space: nowrap;
 }
 
 .botao-sidebar:hover {
@@ -27,17 +27,17 @@
   cursor: pointer;
 }
 
-// Media query para dispositivos de até 480px
+
 @media (max-width: 480px) {
   #sidebar {
-    flex-direction: row; // Alinha os botões horizontalmente
+    flex-direction: row;
   }
 }
 
-// Media query para dispositivos de 480px até 768px
+
 @media (min-width: 481px) and (max-width: 768px) {
   #sidebar {
-    width: 150px; // Ajusta a largura do sidebar
+    width: 150px;
     flex-direction: column;
     height: 100%;
     align-items: center;
@@ -45,10 +45,10 @@
   }
 }
 
-// Media query para dispositivos de 768px até 1024px
+
 @media (min-width: 769px) and (max-width: 1024px) {
   #sidebar {
-    width: 180px; // Ajusta a largura do sidebar
+    width: 180px;
     flex-direction: column;
     height: 100%;
     align-items: center;
@@ -56,10 +56,10 @@
   }
 }
 
-// Media query para dispositivos a partir de 1024px
+
 @media (min-width: 1025px) {
   #sidebar {
-    width: 200px; // Largura original do sidebar
+    width: 200px;
     flex-direction: column;
     height: 100%;
     align-items: center;
