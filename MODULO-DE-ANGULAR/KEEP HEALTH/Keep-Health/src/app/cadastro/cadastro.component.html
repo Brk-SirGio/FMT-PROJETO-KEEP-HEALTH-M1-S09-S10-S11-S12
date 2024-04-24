@@ -1,17 +1,35 @@
 <div id="div--cadastrar">
     <p> 🥗 KEEP HEALTH - Novo Cadastro</p>
-<form (ngSubmit)="cadastrarUsuario()" id="form">
-    <input [(ngModel)]="nome" name="nomeCompleto" placeholder="Digite seu nome completo" type="text" id="cadastro--nome">
-    <input [(ngModel)]="peso" name="peso" placeholder="Digite seu peso em quilograma" type="number" id="cadastro--peso">
-    <input [(ngModel)]="altura" name="altura" placeholder="Digite sua altura em centímetros" type="number" id="cadastro--altura">
-    <input [(ngModel)]="email" name="emailUsuario" required placeholder="Digite um e-mail" type="email" id="cadastro--email">
-    <input [(ngModel)]="nascimento" name="dataNascimento" type="date" id="cadastro--nascimento">
-    <input [(ngModel)]="senha" name="senhaUsuario" required minlength="8" placeholder="Digite uma senha" type="password" id="cadastro--senha">
-    <input [(ngModel)]="confirmarSenha" name="confirmarSenhaUsuario" required minlength="8" placeholder="Confirme a senha digitada" type="password" id="cadastro--confirma-senha">
-    <button id="botão--cadastrar" type="submit">Cadastrar</button> 
-</form>
-<button id="botão--voltar" type="submit" routerLink="/login">Voltar</button>
+    <form [formGroup]="cadastroForm" (ngSubmit)="cadastrarUsuario()" id="form">
+        <input formControlName="nomeCompleto" placeholder="Digite seu nome completo" type="text" id="cadastro--nome">
+        <div *ngIf="cadastroForm.get('nomeCompleto')?.invalid && cadastroForm.get('nomeCompleto')?.touched" class="erro-msg">
+            Campo obrigatório
+        </div>
+        
+        <input formControlName="peso" placeholder="Digite seu peso em quilograma" type="number" id="cadastro--peso">
+        <input formControlName="altura" placeholder="Digite sua altura em centímetros" type="number" id="cadastro--altura">
+
+        <input formControlName="email" placeholder="Digite um e-mail" type="email" id="cadastro--email">
+        <div *ngIf="cadastroForm.get('email')?.invalid && cadastroForm.get('email')?.touched" class="erro-msg">
+            Campo obrigatório
+        </div>
+
+
+        <input formControlName="dataNascimento" type="date" id="cadastro--nascimento">
+
+
+        <input formControlName="senha" placeholder="Digite uma senha" type="password" id="cadastro--senha">
+        <div *ngIf="cadastroForm.get('senha')?.invalid && cadastroForm.get('senha')?.touched" class="erro-msg">
+            Campo obrigatório
+        </div>
+
+        <input formControlName="confirmarSenha" placeholder="Confirme a senha digitada" type="password" id="cadastro--confirma-senha">
+        <div *ngIf="cadastroForm.get('confirmarSenha')?.invalid && cadastroForm.get('confirmarSenha')?.touched" class="erro-msg">
+            Campo obrigatório
+        </div>
+
+        
+        <button id="botão--cadastrar" type="submit">Cadastrar</button> 
+    </form>
+    <button id="botão--voltar" type="submit" routerLink="/login">Voltar</button>
 </div>
-
-
-<!-- nome, email, peso, altura, código do usuário, idade e localização -->
