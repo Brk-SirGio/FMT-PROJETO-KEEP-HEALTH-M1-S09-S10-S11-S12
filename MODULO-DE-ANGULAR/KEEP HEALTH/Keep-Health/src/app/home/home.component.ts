@@ -1,19 +1,34 @@
 import { Component } from '@angular/core';
 import { SidebarComponent } from '../shared/components/sidebar/sidebar.component';
-import { Router, RouterLink, RouterModule } from '@angular/router';
+import { Router } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { HeaderComponent } from '../shared/components/header/header.component';
+import { DialogModule } from 'primeng/dialog';
+import { CalendarModule } from 'primeng/calendar';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [SidebarComponent, HttpClientModule, HeaderComponent],
+  imports: [SidebarComponent, HttpClientModule, HeaderComponent, DialogModule, CalendarModule, CommonModule, FormsModule],
+    providers: [],
   templateUrl: './home.component.html',
-  styleUrl: './home.component.scss'
+  styleUrls: ['./home.component.scss']
 })
 export class HomeComponent {
-  usuarioObject: any;
+  usuarioObject: any = {}; // Inicialize como um objeto vazio
+  displayDialog = false;
+  tiposAtividades = ['Corrida', 'Ciclismo', 'Natação'];
+  atividadeSelecionada: string = '';
+  dataRealizada: Date | null = null;
+  distancia: number | null = null;
+  tempo: string = '';
+  atividades: any[] = [];
   
-  constructor(private router: Router){
+  
+  
+  constructor(private router: Router) {
     
     const listaProdutos = [
       {
@@ -97,14 +112,38 @@ export class HomeComponent {
         nome: 'Abacaxi'
       }
     ];
+    localStorage.setItem('listaDeFrutas', JSON.stringify(listaProdutos));
+    
+    this.atividades = JSON.parse(localStorage.getItem('atividades') || '[]');
+    this.usuarioObject = JSON.parse(localStorage.getItem('usuario') || '{}');
+  }
 
-  localStorage.setItem('listaDeFrutas', JSON.stringify(listaProdutos));
+  salvarAtividade() {
+    const novaAtividade = {
+      tipoAtividade: this.atividadeSelecionada,
+      dataRealizada: this.dataRealizada,
+      distancia: this.distancia,
+      tempo: this.tempo
+    };
+    this.atividades.push(novaAtividade);
+    localStorage.setItem('atividades', JSON.stringify(this.atividades));
+    this.displayDialog = false;
+  }
 
-  const usuarioString = localStorage.getItem('usuario');
-
-    if (usuarioString) {
-      this.usuarioObject = JSON.parse(usuarioString);
+  getImagemAtividade(tipoAtividade: string): string {
+    switch (tipoAtividade) {
+      case 'Corrida':
+        return 'assets/corrida.jpg';
+      case 'Ciclismo':
+        return 'assets/ciclismo.jpg';
+      case 'Natação':
+        return 'assets/natacao.jpg';
+      default:
+        return '';
     }
+  }
+}
 
-}
-}
+
+
+

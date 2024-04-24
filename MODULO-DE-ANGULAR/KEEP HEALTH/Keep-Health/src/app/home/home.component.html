@@ -1,5 +1,37 @@
 <app-header></app-header>
 <app-sidebar></app-sidebar>
 
+<h1>Seja bem-vindo(a), {{ usuarioObject.nomeCompleto }}!</h1>
 
-<h1>Seja bem-vindo(a), {{ usuarioObject.nome }}!</h1>
+<div id="container-exercicios">
+<button pButton type="button" label="Adicionar Atividade" (click)="displayDialog = true"></button>
+<p-dialog [(visible)]="displayDialog" [style]="{ width: '100vw' }" header="Adicionar Atividade">
+  <div>
+    <label for="tipoAtividade">Tipo de Atividade:</label>
+    <select id="tipoAtividade" [(ngModel)]="atividadeSelecionada">
+      <option *ngFor="let atividade of tiposAtividades" [value]="atividade">{{ atividade }}</option>
+    </select>
+  </div>
+  <div>
+    <label for="dataRealizada">Data Realizada:</label>
+    <p-calendar id="dataRealizada"  [(ngModel)]="dataRealizada"></p-calendar>
+  </div>
+  <div>
+    <label for="distancia">Distância (opcional):</label>
+    <input id="distancia" type="number" [(ngModel)]="distancia">
+  </div>
+  <div>
+    <label for="tempo">Tempo (opcional):</label>
+    <input id="tempo" type="text" [(ngModel)]="tempo">
+  </div>
+  <button pButton type="button" label="Salvar" (click)="salvarAtividade()"></button>
+</p-dialog>
+
+<div *ngFor="let atividade of atividades">
+  <img [src]="getImagemAtividade(atividade.tipoAtividade)" alt="Imagem da Atividade">
+  <p>{{ atividade.tipoAtividade }}</p>
+  <p>Data: {{ atividade.dataRealizada | date }}</p>
+  <p *ngIf="atividade.distancia">Distância: {{ atividade.distancia }} km</p>
+  <p *ngIf="atividade.tempo">Tempo: {{ atividade.tempo }}</p>
+</div>
+</div>
