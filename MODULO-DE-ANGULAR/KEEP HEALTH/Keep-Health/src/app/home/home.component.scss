@@ -40,7 +40,6 @@ h1 {
     display: flex;
     width: 60%;
     flex-direction: column;
-    width: 60%;
     margin: auto;
     position: absolute;
     top: 70%;
@@ -67,7 +66,6 @@ h1 {
       display: flex;
       width: 60%;
       flex-direction: column;
-      width: 60%;
       margin: auto;
       position: absolute;
       top: 80%;
@@ -85,4 +83,12 @@ h1 {
   #container-exercicios img {
     width: 100px;
 
+  }
+
+  #container-exercicios p-dialog {
+    padding: 50px;
+  }
+
+  #container-exercicio p-calendar {
+    width: fit-content;
   }

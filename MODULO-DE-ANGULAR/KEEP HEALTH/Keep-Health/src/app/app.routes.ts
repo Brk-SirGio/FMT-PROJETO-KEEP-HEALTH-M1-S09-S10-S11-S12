@@ -5,6 +5,7 @@ import { CadastroComponent } from './cadastro/cadastro.component';
 import { DietasComponent } from './dietas/dietas.component';
 import { DetalhamentoDietasComponent } from './dietas/detalhamento-dietas/detalhamento-dietas.component';
 import { PerfilComponent } from './perfil/perfil.component';
+import { AuthGuard } from './shared/shared/auth.guard';
 
 export const routes: Routes = [
   {
@@ -16,6 +17,7 @@ export const routes: Routes = [
     path: 'home',
     title: 'Home da página',
     component: HomeComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'login',
@@ -30,7 +32,8 @@ export const routes: Routes = [
   {
     path: 'diet',
     title: 'Dietas',
-    component: DietasComponent
+    component: DietasComponent,
+    canActivate: [AuthGuard]
   },
   {
     
@@ -42,5 +45,6 @@ export const routes: Routes = [
     path: 'profile',
     title: 'perfil',
     component: PerfilComponent,
+    canActivate: [AuthGuard]
   }
 ];

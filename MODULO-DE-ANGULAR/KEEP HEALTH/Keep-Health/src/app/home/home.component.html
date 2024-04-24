@@ -5,7 +5,7 @@
 
 <div id="container-exercicios">
 <button pButton type="button" label="Adicionar Atividade" (click)="displayDialog = true"></button>
-<p-dialog [(visible)]="displayDialog" [style]="{ width: '100vw' }" header="Adicionar Atividade">
+<p-dialog [(visible)]="displayDialog"  header="Adicionar Atividade">
   <div>
     <label for="tipoAtividade">Tipo de Atividade:</label>
     <select id="tipoAtividade" [(ngModel)]="atividadeSelecionada">
