@@ -1,27 +1,68 @@
+// Estilos base (mobile first)
 #sidebar {
-    background-color: #000080;
-    margin: 0;
+  background-color: #000080;
+  margin: 0;
   padding: 0;
-  width: 200px;
+  width: 100%; // Largura total para dispositivos móveis
   position: fixed;
-  height: 100%;
   overflow: auto;
+  display: flex; // Muda para flexbox
+  flex-direction: row; // Alinha os botões horizontalmente
+  justify-content: space-around; // Distribui os botões uniformemente
 }
 
 .botao-sidebar {
-    display: block;
-    color: white;
-    font-size: 20px;
-    padding: 16px;
-    text-decoration: none;
-    background-color: transparent;
-    border: none;
-    width: 100%;
-  }
-  
-  .botao-sidebar:hover {
-    background-color: rgba(8, 180, 180, 0.692);
-    border-radius: 4px;
-    cursor: pointer;
+  color: white;
+  font-size: 16px; // Tamanho de fonte para dispositivos móveis
+  padding: 8px 16px; // Padding reduzido para dispositivos móveis
+  text-decoration: none;
+  background-color: transparent;
+  border: none;
+  white-space: nowrap; // Evita que o texto quebre em várias linhas
+}
 
+.botao-sidebar:hover {
+  background-color: rgba(8, 180, 180, 0.692);
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+// Media query para dispositivos de até 480px
+@media (max-width: 480px) {
+  #sidebar {
+    flex-direction: row; // Alinha os botões horizontalmente
   }
+}
+
+// Media query para dispositivos de 480px até 768px
+@media (min-width: 481px) and (max-width: 768px) {
+  #sidebar {
+    width: 150px; // Ajusta a largura do sidebar
+    flex-direction: column;
+    height: 100%;
+    align-items: center;
+    justify-content: flex-start;
+  }
+}
+
+// Media query para dispositivos de 768px até 1024px
+@media (min-width: 769px) and (max-width: 1024px) {
+  #sidebar {
+    width: 180px; // Ajusta a largura do sidebar
+    flex-direction: column;
+    height: 100%;
+    align-items: center;
+    justify-content: flex-start;
+  }
+}
+
+// Media query para dispositivos a partir de 1024px
+@media (min-width: 1025px) {
+  #sidebar {
+    width: 200px; // Largura original do sidebar
+    flex-direction: column;
+    height: 100%;
+    align-items: center;
+    justify-content: flex-start;
+  }
+}

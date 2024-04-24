@@ -14,3 +14,23 @@ h1 {
     border-radius: 10px;
     flex-direction: column;
   }
+
+  @media (min-width: 480px) {
+    h1 {
+      top: 50%;
+      left: 60%;
+      width: 50%; // Ajuste para uma largura menor
+      // Outros estilos conforme necessário
+    }
+  }
+  
+  // Breakpoint para dispositivos de 768px até 1024px
+  @media (min-width: 768px) {
+    h1 {
+      top: 50%;
+    left: 60%;
+      width: 50%; // Ajuste para uma largura ainda menor
+      // Outros estilos conforme necessário
+    }
+  }
+  
