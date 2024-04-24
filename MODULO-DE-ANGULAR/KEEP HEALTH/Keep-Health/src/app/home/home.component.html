@@ -17,11 +17,11 @@
     <p-calendar id="dataRealizada"  [(ngModel)]="dataRealizada"></p-calendar>
   </div>
   <div>
-    <label for="distancia">Distância (opcional):</label>
+    <label for="distancia">Distância (em KM):</label>
     <input id="distancia" type="number" [(ngModel)]="distancia">
   </div>
   <div>
-    <label for="tempo">Tempo (opcional):</label>
+    <label for="tempo">Tempo (em minutos):</label>
     <input id="tempo" type="text" [(ngModel)]="tempo">
   </div>
   <button pButton type="button" label="Salvar" (click)="salvarAtividade()"></button>
@@ -32,6 +32,6 @@
   <p>{{ atividade.tipoAtividade }}</p>
   <p>Data: {{ atividade.dataRealizada | date }}</p>
   <p *ngIf="atividade.distancia">Distância: {{ atividade.distancia }} km</p>
-  <p *ngIf="atividade.tempo">Tempo: {{ atividade.tempo }}</p>
+  <p *ngIf="atividade.tempo">Tempo: {{ atividade.tempo }} minutos</p>
 </div>
 </div>
